@@ -1,0 +1,42 @@
+﻿@charset "UTF-8";
+body {
+  padding-top: 10px;
+}
+
+#message {
+    display: none;
+    margin: 20px 0;
+    padding: 8px 24px;
+    font-size: 16px;
+    background: #9fd577;
+    width: auto;
+}
+
+#start {
+    display: none;
+    width: 280px;
+    padding: 10px 20px;
+    background: #4eb7ff;
+    border: 2px solid #0091f2;
+    border-radius: 6px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer
+}
+
+#start:hover {
+    background: #0091f2;
+}
+
+#thumbs {
+    display: none;
+    margin-top: 20px;
+    padding: 20px 28px;
+    background: #c4dbea;
+}
+
+#thumbs canvas {
+    margin: 10px;
+}

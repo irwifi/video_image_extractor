@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Image Extractor Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Video Image Extractor</h1>
+        </div>
+
+        <div>
+            <div>
+                <video controls="" autoplay="" style="display: none;"></video>
+                Please select the video to extract the Images (MP4 formats only)
+                <input type="file" accept="video/*" id="sample_video">
+            </div>
+            <div id="message"></div>
+            <div id="start">Start Extracting Images</div>
+            <div id="thumbs"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
