@@ -25,7 +25,7 @@ $(function() {
         var type = file.type
         var videoNode = document.querySelector('video')
         var canPlay = videoNode.canPlayType(type)
-        if (canPlay === '') canPlay = 'no'
+        if (canPlay === '') canPlay = 'maybe'
         var message = 'Can play type "' + type + '": ' + canPlay
         var isError = canPlay === 'no'
         displayMessage(message, isError)
@@ -49,6 +49,10 @@ $(function() {
         var video = document.createElement("video");
         var thumbs = document.getElementById("thumbs");
 
+        video.preload = "auto";
+        video.src = fileURL;
+        video.currentTime = i;
+
         video.addEventListener('loadeddata', function() {
             thumbs.innerHTML = "";
             video.currentTime = i;
@@ -68,33 +72,8 @@ $(function() {
             }
         }, false);
 
-        video.preload = "auto";
-        video.src = fileURL;
 
-        var xCount = 0;
-
-        function uploadCanvas(dataURL) {
-            var blobBin = atob(dataURL.split(',')[1]);
-            var array = [];
-            for (var i = 0; i < blobBin.length; i++) {
-                array.push(blobBin.charCodeAt(i));
-            }
-            var file = new Blob([new Uint8Array(array)], { type: 'image/png' });
-            var formdata = new FormData();
-            formdata.append("image", file);
-
-            $.ajax({
-                url: "/asdfs/zlock",
-                type: "POST",
-                data: formdata,
-                processData: false, // important
-                contentType: false // important
-            }).complete(function(response) {
-                console.log(response.status);
-            });
-        }
-
-        function generateThumbnail() {
+         function generateThumbnail(j) {
             var c = document.createElement("canvas");
             c.id = "canvas";
 
