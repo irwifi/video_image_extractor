@@ -3,6 +3,10 @@ body {
   padding-top: 10px;
 }
 
+#vid {
+    display: none;
+}
+
 #message {
     display: none;
     margin: 20px 0;
